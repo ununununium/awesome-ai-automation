@@ -1,58 +1,60 @@
 # Skill Name
 
 ## When to use this skill
-Describe the trigger conditions — what user requests, keywords, or contexts should cause the agent to load this skill. Be specific.
+Describe the trigger conditions — what user requests, keywords, or contexts should cause the agent to load this skill.
 
-Examples:
 - Use when the user asks to [do X]
 - Use when the user mentions "[keyword]" or "[keyword2]"
 - NOT for: [anti-patterns — what this skill should NOT handle]
 
 ## Setup (one-time)
-Any installation or configuration steps required before the skill works.
+Any installation steps required before the skill can run.
 
 ```bash
-# Example:
 brew install some-tool
+some-tool auth login
 ```
 
-Configuration:
-- API key: stored in `~/.config/my-tool/key`
-- Auth: run `my-tool auth login` once
+Store credentials at: `~/.config/my-tool/credentials.json`
 
 ## Usage
 
-### Basic command
+### Primary command
 ```bash
 my-tool do-thing --option value
 ```
 
 ### Common patterns
-<!-- List 3-5 of the most common use cases with example commands -->
 
-**Pattern 1: [Description]**
+**List items:**
 ```bash
-my-tool command --flag
+my-tool list --format json
 ```
 
-**Pattern 2: [Description]**
+**Create:**
 ```bash
-my-tool other-command
+my-tool create --name "Example" --type project
+```
+
+**Update:**
+```bash
+my-tool update <id> --field value
 ```
 
 ## Output handling
-<!-- What to do with the tool's output -->
-- Parse JSON with `| python3 -m json.tool`
-- Report result to user as: "[concise summary]"
+- Parse JSON output with `python3 -m json.tool`
+- Report result to user as a concise summary
+- On error: [describe how to handle errors]
 
 ## Error handling
-<!-- Common errors and how to resolve them -->
-- `Error X` → run `my-tool reset` and retry
-- `Auth failed` → re-run setup step
+| Error | Resolution |
+|-------|-----------|
+| `Auth failed` | Re-run `some-tool auth login` |
+| `Rate limit` | Wait 60s and retry |
+| `Not found` | Verify the ID exists |
 
 ## Examples
-<!-- Real input → expected output pairs -->
 
-**User:** "Do X for Y"
-**Action:** `my-tool do-x --target y`
-**Response:** "Done — [result]"
+**User asks:** "Do X for Y"
+**Command:** `my-tool do-x --target y`
+**Response:** "Done — [describe what happened]"
