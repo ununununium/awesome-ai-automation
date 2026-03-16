@@ -1,51 +1,49 @@
 # Project Context
 
 <!--
-  CLAUDE.md — Instructions for Claude Code
-  Place this file in your project root.
-  Claude Code reads it automatically at the start of every session.
+  CLAUDE.md — Read automatically by Claude Code at session start.
+  Place this file in your project root or any parent directory.
 -->
 
 ## What this is
-<!-- One sentence description of the project -->
+<!-- One sentence: what does this project do? -->
 
 ## Stack
-<!-- e.g. Next.js 15, TypeScript, Supabase, Vercel -->
+<!-- e.g. Next.js 16, TypeScript, Supabase, Vercel, Tailwind CSS -->
 
 ## Key files
-<!-- List important entry points and what they do -->
+<!-- Entry points and what they do -->
 - `app/page.tsx` — homepage
-- `lib/supabase.ts` — DB client and type definitions
+- `lib/db.ts` — database client and types
 - `components/` — shared UI components
+- `app/api/` — API route handlers
 
 ## Commands
 ```bash
-npm run dev        # start dev server (localhost:3000)
+npm run dev        # dev server (localhost:3000)
 npm run build      # production build
-npm run typecheck  # TypeScript check
-npm test           # run tests
-vercel --prod      # deploy to production
+npm run typecheck  # TypeScript check without emit
+npm test           # run test suite
+vercel --prod      # deploy to production (ask before running)
 ```
 
 ## Conventions
-<!-- Your project's coding standards -->
-- TypeScript strict mode enabled
-- Functional components, no class components
-- Tailwind CSS for styling
-- Use `supabaseAdmin` for server-side writes, `supabase` for reads
+<!-- Your project's rules — Claude will follow these -->
+- TypeScript strict mode
+- Functional React components only
+- Tailwind for all styling — no CSS modules
+- Server components by default; add 'use client' only when needed
+- Use `supabaseAdmin` for server writes, `supabase` for reads
 
-## Database
-<!-- Schema overview or link to schema file -->
-See `supabase/schema.sql` for full schema.
-
-## Environment
-<!-- Which .env vars are required -->
-Required in `.env.local`:
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
-- `SUPABASE_SECRET_KEY`
+## Environment variables
+```
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
+SUPABASE_SECRET_KEY=
+```
 
 ## Do not
-- Modify the Supabase schema without updating `supabase/schema.sql`
-- Deploy with `vercel --prod` without explicit approval
-- Add secrets or tokens to source files
+- Commit secrets or API keys
+- Run `vercel --prod` without explicit approval
+- Modify the DB schema without updating `supabase/schema.sql`
+- Add `use client` to components that don't need it
