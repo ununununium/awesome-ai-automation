@@ -1,0 +1,58 @@
+# Skill Name
+
+## When to use this skill
+Describe the trigger conditions — what user requests, keywords, or contexts should cause the agent to load this skill. Be specific.
+
+Examples:
+- Use when the user asks to [do X]
+- Use when the user mentions "[keyword]" or "[keyword2]"
+- NOT for: [anti-patterns — what this skill should NOT handle]
+
+## Setup (one-time)
+Any installation or configuration steps required before the skill works.
+
+```bash
+# Example:
+brew install some-tool
+```
+
+Configuration:
+- API key: stored in `~/.config/my-tool/key`
+- Auth: run `my-tool auth login` once
+
+## Usage
+
+### Basic command
+```bash
+my-tool do-thing --option value
+```
+
+### Common patterns
+<!-- List 3-5 of the most common use cases with example commands -->
+
+**Pattern 1: [Description]**
+```bash
+my-tool command --flag
+```
+
+**Pattern 2: [Description]**
+```bash
+my-tool other-command
+```
+
+## Output handling
+<!-- What to do with the tool's output -->
+- Parse JSON with `| python3 -m json.tool`
+- Report result to user as: "[concise summary]"
+
+## Error handling
+<!-- Common errors and how to resolve them -->
+- `Error X` → run `my-tool reset` and retry
+- `Auth failed` → re-run setup step
+
+## Examples
+<!-- Real input → expected output pairs -->
+
+**User:** "Do X for Y"
+**Action:** `my-tool do-x --target y`
+**Response:** "Done — [result]"
