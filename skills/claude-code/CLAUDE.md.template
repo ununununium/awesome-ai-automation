@@ -1,0 +1,51 @@
+# Project Context
+
+<!--
+  CLAUDE.md — Instructions for Claude Code
+  Place this file in your project root.
+  Claude Code reads it automatically at the start of every session.
+-->
+
+## What this is
+<!-- One sentence description of the project -->
+
+## Stack
+<!-- e.g. Next.js 15, TypeScript, Supabase, Vercel -->
+
+## Key files
+<!-- List important entry points and what they do -->
+- `app/page.tsx` — homepage
+- `lib/supabase.ts` — DB client and type definitions
+- `components/` — shared UI components
+
+## Commands
+```bash
+npm run dev        # start dev server (localhost:3000)
+npm run build      # production build
+npm run typecheck  # TypeScript check
+npm test           # run tests
+vercel --prod      # deploy to production
+```
+
+## Conventions
+<!-- Your project's coding standards -->
+- TypeScript strict mode enabled
+- Functional components, no class components
+- Tailwind CSS for styling
+- Use `supabaseAdmin` for server-side writes, `supabase` for reads
+
+## Database
+<!-- Schema overview or link to schema file -->
+See `supabase/schema.sql` for full schema.
+
+## Environment
+<!-- Which .env vars are required -->
+Required in `.env.local`:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+- `SUPABASE_SECRET_KEY`
+
+## Do not
+- Modify the Supabase schema without updating `supabase/schema.sql`
+- Deploy with `vercel --prod` without explicit approval
+- Add secrets or tokens to source files
