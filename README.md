@@ -193,6 +193,8 @@ Templates and frameworks for building AI agent skills and extensions.
 | [Smithery](https://smithery.ai) | Discover and install MCP servers |
 
 ---
+| [toprank](https://github.com/nowork-studio/toprank) | Open-source SEO & Google Ads skills for Claude Code. Meta tags, schema markup, keyword bids, CMS pushes. |
+
 
 ## Learning Resources
 
