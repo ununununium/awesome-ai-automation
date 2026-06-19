@@ -127,6 +127,7 @@ Platforms for building, deploying, and managing AI agents and multi-agent system
 | [anthropics/courses](https://github.com/anthropics/courses) | Official Anthropic prompt engineering courses |
 | [anthropics/anthropic-cookbook](https://github.com/anthropics/anthropic-cookbook) | Code recipes for Claude API |
 | [anthropics/claude-code-action](https://github.com/anthropics/claude-code-action) | GitHub Actions integration |
+| [NotFair](https://github.com/nowork-studio/NotFair) | Open-source Claude Code skills for SEO, GEO, Google Ads, and Meta Ads; connects to live data via Google Ads MCP, Meta Ads MCP, Google Search Console MCP, and Google Analytics (GA4) MCP (~2.9k stars, MIT) |
 | [Paperclip](https://github.com/paperclipai/paperclip) | Multi-agent company orchestration (works with Claude Code) |
 
 ---
